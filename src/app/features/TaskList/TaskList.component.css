@@ -1,0 +1,14 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.Title{
+  font-size: 2rem;
+  text-align:start;
+  margin-bottom: 30px;
+  padding: 20px;
+
+}
