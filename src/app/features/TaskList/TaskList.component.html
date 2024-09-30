@@ -1,3 +1,48 @@
 <div class="container">
-    <h1 class="Title">Organiza tus tareas</h1>
+  <h1 class="Title">Organiza tus tareas</h1>
+  <div class="sticky-container">
+    <form [formGroup]="taskForm" class="task-input" (ngSubmit)="saveTask()">
+      <div class="relative w-full max-w-xs mx-auto">
+        <label for="input"
+          class="absolute left-2 top-0 transition-all text-gray-500 text-sm px-1 bg-white -translate-y-1/2 pointer-events-none">
+          Tarea
+        </label>
+        <input id="input" type="text" formControlName="name"
+          class="w-full border border-gray-300 rounded px-3 pt-5 pb-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 peer placeholder-transparent">
+        <div
+          class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500 transform scale-x-0 peer-focus:scale-x-100 transition-transform">
+        </div>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <button type="submit"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow-md transition-colors">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="w-full max-w-md mx-auto">
+    <div class="text-gray-500 font-semibold mb-4">Tareas</div>
+    <ul>
+      <li *ngFor="let task of tasks; trackBy: trackTask" class="relative flex items-center mb-4 p-4 bg-white shadow-md rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 absolute left-2 top-4" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+
+        <div class="ml-12">
+          <div class="text-gray-800 font-semibold">{{task.name}}</div>
+          <div class="text-gray-600">Estado: Activa</div>
+        </div>
+
+        <button (click)="deleteTask(task.id)" class="absolute right-2 top-4 bg-transparent hover:text-red-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
 </div>

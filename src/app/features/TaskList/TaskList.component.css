@@ -1,14 +1,83 @@
-.app-container {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
 
-.Title{
-  font-size: 2rem;
-  text-align:start;
+.Title {
+  font-size: 3rem;
+  text-align: center;
   margin-bottom: 30px;
-  padding: 20px;
+}
 
+.sticky-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  width: 100%;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.task-form {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  justify-content: space-between;
+}
+
+.task-input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.save-button {
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+}
+
+.content {
+  width: 100%;
+}
+
+.custom-list-item {
+  background-color: #f0f0f0;
+  color: #1d1d1d;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.custom-list-item .mat-icon {
+  color: #1d1d1d;
+  align-content: center;
+}
+
+.custom-list-item mat-list-item-line {
+  color: #1d1d1d;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
+
+#snackbar {
+  transition: opacity 0.3s ease;
+}
+#snackbar.hidden {
+  opacity: 0;
+}
+#snackbar:not(.hidden) {
+  opacity: 1;
 }
