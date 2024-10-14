@@ -1,2 +1,6 @@
+<ng-container class="content-center" *ngIf="showInstallButton">
+    <button class=" p-3 bg-red-800 text-white hover:bg-red-400  hover:text-black rounded" (click)="InstalarPWA()">Instalar App</button>
+  </ng-container>
+  
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
